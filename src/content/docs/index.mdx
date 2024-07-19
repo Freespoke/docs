@@ -1,0 +1,38 @@
+---
+title: Documentation
+description: Learn about Freespoke's mission, technology, and features.
+template: splash
+hero:
+  title: |
+    Welcome to Freespoke's documentation site
+  tagline: Learn about Freespoke's mission, technology, and features.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Getting Started
+      link: /get-started/
+      icon: right-arrow
+      variant: primary
+    - text: Return to Freespoke.com
+      link: https://freespoke.com
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+</CardGrid>
