@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+	site: "https://docs.freespoke.com",
 	integrations: [
 		starlight({
 			title: 'Freespoke',
@@ -13,16 +14,17 @@ export default defineConfig({
 			sidebar: [
 				'get-started',
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Freespoke Premium',
+					autogenerate: { directory: 'premium' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'About Freespoke',
+					autogenerate: { directory: 'about' },
 				},
+				{
+					label: 'Privacy',
+					autogenerate: { directory: 'privacy' },
+				}
 			],
 			customCss: ['./src/tailwind.css'],
 		}),
