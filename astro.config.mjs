@@ -26,7 +26,7 @@ export default defineConfig({
 					autogenerate: { directory: 'privacy' },
 				}
 			],
-			customCss: ['./src/tailwind.css'],
+			customCss: ['./src/tailwind.css', './src/styles/custom.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
 	],
