@@ -31,6 +31,18 @@ export default defineConfig({
 					autogenerate: { directory: 'privacy' },
 				}
 			],
+			favicon: '/public/favicon-16x16.png',
+			head: [
+				// Add ICO favicon fallback for Safari.
+				{
+				tag: 'link',
+				attrs: {
+					rel: 'icon',
+					href: '/public/favicon.ico',
+					sizes: '32x32',
+				},
+				},
+			],
 			customCss: ['./src/tailwind.css'],
 		}),
 		tailwind({ applyBaseStyles: false }),
