@@ -19,12 +19,16 @@ export default defineConfig({
 			sidebar: [
 				'get-started',
 				{
-					label: 'Freespoke Premium',
-					autogenerate: { directory: 'premium' },
-				},
-				{
 					label: 'About Freespoke',
 					autogenerate: { directory: 'about' },
+				},
+				{
+					label: 'Freespoke Accounts',
+					autogenerate: { directory: 'account' },
+				},
+				{
+					label: 'Freespoke Premium',
+					autogenerate: { directory: 'premium' },
 				},
 				{
 					label: 'Privacy',

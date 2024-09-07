@@ -4,7 +4,7 @@ sidebar:
     order: 999
 ---
 
-Freespoke is committed to protecting your privacy and the security of your privacy information.
+Freespoke is committed to protecting your privacy and the security of your personal information.
 
 ## Warrant Canary Statement
 
