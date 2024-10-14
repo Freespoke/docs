@@ -23,19 +23,14 @@ export default defineConfig({
         directory: 'about'
       }
     }, {
-      label: 'Freespoke Accounts',
+      label: 'Accounts & Premium',
       autogenerate: {
         directory: 'account'
       }
     }, {
-      label: 'Freespoke Premium',
+      label: 'Search',
       autogenerate: {
-        directory: 'premium'
-      }
-    }, {
-      label: 'Privacy',
-      autogenerate: {
-        directory: 'privacy'
+        directory: 'search'
       }
     }],
     favicon: '/favicon-16x16.png',

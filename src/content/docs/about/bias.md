@@ -1,6 +1,8 @@
 ---
 title: Political Bias Ratings
 description: How Freespoke's Political Bias ratings work.
+sidebar:
+    order: 2
 ---
 
 # Bias Ratings

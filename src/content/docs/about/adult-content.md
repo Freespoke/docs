@@ -1,6 +1,8 @@
 ---
 title: Adult Content
 description: Freespoke's policies on adult content
+sidebar:
+    order: 3
 ---
 
 # Our policies on adult content
