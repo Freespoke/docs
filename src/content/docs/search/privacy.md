@@ -2,7 +2,7 @@
 title: Search Privacy
 description: How Freespoke provides anonymous searching.
 sidebar:
-    order: 2
+    order: 1
 ---
 
 Freespoke is dedicated to protecting your search privacy. Search is at the core of how we all discover the internet. Because so much of our activity online originates from search, search engine companies are uniquely positioned to take advantage of you to gather, collate, and exploit your personal information at an incredibly personal level. The largest and most powerful corporations on the planet realize this fact, and fight tooth and nail to keep your searches. Tens of billions of dollars change hands every year to nudge you towards one search engine or another. It's not because of a drive to give you the best quality result. Rather, it's to collect as much information as possible about you -- your location, your preferences, your state of mind, your purchase activity. They create a version of you in their system to predict what you will do next, and sell the opportunity to take your money to the highest bidder.
