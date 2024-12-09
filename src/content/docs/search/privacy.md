@@ -17,12 +17,11 @@ Freespoke does not collect identifying information for search. Due to how the in
 
 ## What we share
 
-Freespoke relies on vendors to provide certain types of search results. This section describes who those vendors are, what data they receive, and why.
+Freespoke relies on vendors to supplement our own search results. This section describes who those vendors are, what data they receive, and why.
 
-- **Brave**. We use Brave Search API for most of our web and place results. We share your search term and anonymized location with Brave.
-- **Microsoft**. We use Bing for images and video results, and as part of our spellchecker. Microsoft receives your search term only. If you visit our image results, your browser will load thumbnails from Microsoft servers.
+- **Brave**. Some of our search results come from Brave. We share your search term and anonymized location with Brave.
+- **Microsoft**. We use Bing for image results, and as part of our spellchecker. Microsoft receives your search term only. If you visit our image results, your browser will load thumbnails from Microsoft servers.
 - **Ad.net**. We receive syndicated advertisements from Ad.net for some search result pages. These advertisements are received via server-to-server communication. Your browser loads no resources from Ad.net unless you click on an advertisement. We share your search term and anonymized IP address with Ad.net. If you are a Freespoke Premium user with ad block enabled, Ad.net receives no signal from your searches whatsoever. See [here](https://www.ad.net/privacy-policy/) for Ad.net's privacy policy. Ad.net receives requests only when we expect it likely that an ad will be returned.
-- **Admedia**. We receive syndicated advertisements from Admedia for some search result pages. These advertisements are received via server-to-server communication. Your browser loads no resources from Admedia unless you click on an advertisement. We share your search term and anonymized IP address with Admedia. If you are a Freespoke Premium user with ad block enabled, Admedia receives no signal from your searches whatsoever. See [here](https://admedia.com/privacy/) for Admedia's privacy policy. Admedia receives requests only when we expect it likely that an ad will be returned.
 
 ## What we collect
 

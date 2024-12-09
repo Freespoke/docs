@@ -37,7 +37,7 @@ Opt out of Google and Big Tech exploitation by choosing Freespoke. By changing t
 
 Use Freespoke for free, or for $5 a month or $30 a year, support Freespoke with [Freespoke Premium](/account/get-premium).
 
-### Anti-Pornography
+### Anti-Human Trafficking
 
 Online pornography is the [third most common form of sex trafficking](https://polarisproject.org/wp-content/uploads/2019/09/Polaris-2019-US-National-Human-Trafficking-Hotline-Data-Report.pdf). Nick Kristof of the New York Times writes that ["Google supports the business models of companies that thrive on child molestation"](https://www.nytimes.com/2020/12/04/opinion/sunday/pornhub-rape-trafficking.html). Fight The New Drug writes about how [porn fuels sex trafficking](https://fightthenewdrug.org/how-porn-can-fuel-sex-trafficking/).
 
