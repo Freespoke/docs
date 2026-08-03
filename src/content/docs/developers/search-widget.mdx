@@ -1,0 +1,343 @@
+---
+title: Search Widget
+description: Embed the Freespoke Search Widget on your website
+sidebar:
+    order: 3
+---
+
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
+
+The Freespoke Search Widget lets you add Freespoke-powered search to any website. It works as a standalone JavaScript embed or as a [WordPress plugin](/developers/wordpress-plugin).
+
+<Aside type="tip" title="Interactive Demo">
+  Try the live widget configurator to customize settings and preview in real time:
+  [Open Interactive Demo](https://freespoke.com/docs/widgets/freespoke-search/demo)
+</Aside>
+
+## Quick start
+
+<Tabs>
+  <TabItem label="JavaScript / HTML">
+    Add the widget script with your client ID:
+
+    ```html
+    <!-- Add the widget script with your client ID -->
+    <script src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+            data-client-id="YOUR_CLIENT_ID"
+            defer>
+    </script>
+
+    <!-- Widget container (created automatically if not present) -->
+    <div id="freespoke-widget-container"></div>
+    ```
+  </TabItem>
+  <TabItem label="WordPress">
+    1. Install the [Freespoke Search WordPress plugin](/developers/wordpress-plugin).
+    2. Use the shortcode in posts or pages:
+
+    ```
+    [freespoke_search client_id="YOUR_CLIENT_ID"]
+    ```
+
+    Full shortcode with all options:
+
+    ```
+    [freespoke_search
+        client_id="YOUR_CLIENT_ID"
+        theme="light"
+        placeholder="Search our site..."
+        embedded_search="true"
+        auto_search="false"
+        redirect_url="/search-results?q={query}"
+        min_height="80px"]
+    ```
+  </TabItem>
+</Tabs>
+
+<Aside type="note">
+  For production sites, use the minified script for better performance (46% smaller, 3.3KB vs 6.2KB):
+  `https://freespoke.com/widgets/freespoke-search/embed/index.min.js`
+</Aside>
+
+The widget initializes automatically when the script loads.
+
+## Configuration options
+
+### Core configuration
+
+| Attribute | Type | Default | Description |
+| --- | --- | --- | --- |
+| `data-client-id` | string | **Required** | Your unique client identifier |
+| `data-container` | string | `freespoke-widget-container` | ID of the container element where the widget renders |
+| `data-placeholder` | string | `Search ...` | Placeholder text for the search input |
+| `data-theme` | string | `light` | Visual theme: `light`, `dark`, or `auto` |
+
+### Search behavior
+
+| Attribute | Type | Default | Description |
+| --- | --- | --- | --- |
+| `data-auto-search` | boolean | `false` | Automatically search when URL contains a query parameter |
+| `data-query-param` | string | `q` | URL parameter name for the search query (used with `data-auto-search`) |
+| `data-embedded-search` | boolean | `false` | Show search results inline instead of redirecting |
+| `data-redirect-url` | string | | URL template for search redirect, with `{query}` as the placeholder (e.g. `/search?q={query}`). Only used when `data-embedded-search` is `false` |
+| `data-redirect-target` | string | `_self` | Where to open the redirect URL: `_self` or `_blank` |
+
+## Examples
+
+### Search results page with auto-search
+
+```html
+<script src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+        data-client-id="YOUR_CLIENT_ID"
+        data-auto-search="true"
+        data-query-param="q"
+        data-embedded-search="true"
+        defer></script>
+<div id="freespoke-widget-container"></div>
+```
+
+When users visit `yoursite.com/search?q=climate`, the widget automatically searches for "climate".
+
+### Search bar with redirect
+
+```html
+<script src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+        data-client-id="YOUR_CLIENT_ID"
+        data-embedded-search="false"
+        data-redirect-url="/search?q={query}"
+        data-placeholder="Search our site..."
+        defer></script>
+<div id="freespoke-widget-container"></div>
+```
+
+## Styling
+
+### Container styling
+
+Style the widget container with CSS to match your site:
+
+```css
+#freespoke-widget-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+```
+
+### Preventing layout shift
+
+Set a minimum height on the container to prevent content layout shift while the widget loads:
+
+```css
+#freespoke-widget-container {
+  min-height: 60px; /* Search bar only: ~60px */
+  /* OR */
+  min-height: 400px; /* With search results: ~400px+ */
+}
+```
+
+## Theme customization
+
+The widget supports extensive theme customization through `data-style-*` attributes. Customizations take priority over the built-in theme.
+
+### Basic theme usage
+
+```html
+<!-- Light theme (default) -->
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-theme="light">
+</script>
+
+<!-- Dark theme -->
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-theme="dark">
+</script>
+```
+
+### Custom colors
+
+```html
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-style-primary-bg="#ffffff"
+  data-style-primary-text="#2d3748"
+  data-style-primary-border="#e2e8f0"
+  data-style-button-bg="#4299e1"
+  data-style-button-text="#ffffff"
+  data-style-button-hover-bg="#3182ce">
+</script>
+```
+
+### Mode-specific colors
+
+Set different colors for light and dark modes by adding `light-` or `dark-` after `data-style-`:
+
+```html
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-style-light-primary-bg="#ffffff"
+  data-style-light-primary-text="#2d3748"
+  data-style-light-button-bg="#4299e1"
+  data-style-dark-primary-bg="#1a202c"
+  data-style-dark-primary-text="#f7fafc"
+  data-style-dark-button-bg="#63b3ed">
+</script>
+```
+
+### Typography and spacing
+
+```html
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-style-font-family="'Inter', -apple-system, sans-serif"
+  data-style-font-size="16px"
+  data-style-font-size-small="14px"
+  data-style-font-size-large="18px"
+  data-style-border-radius="8px"
+  data-style-transition-duration="200ms">
+</script>
+```
+
+### Available theme properties
+
+#### Color properties
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-primary-bg` | Main background color | `#ffffff` |
+| `data-style-primary-text` | Primary text color | `#3b4355` |
+| `data-style-primary-border` | Primary border color | `#e1e5eb` |
+| `data-style-secondary-bg` | Secondary background color | `#f9fafb` |
+| `data-style-secondary-text` | Secondary text color | `#606671` |
+| `data-style-secondary-border` | Secondary border color | `#e5e7eb` |
+
+#### Button colors
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-button-bg` | Button background color | `#222222` |
+| `data-style-button-text` | Button text color | `#ffffff` |
+| `data-style-button-hover-bg` | Button hover background color | `#1f2937` |
+| `data-style-button-hover-text` | Button hover text color | `#ffffff` |
+| `data-style-button-border` | Button border color | `#222222` |
+
+#### Input colors
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-input-bg` | Input background color | `#ffffff` |
+| `data-style-input-text` | Input text color | `#3b4355` |
+| `data-style-input-border` | Input border color | `#e1e5eb` |
+| `data-style-input-placeholder` | Input placeholder text color | `#9ca3af` |
+
+#### Link colors
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-link-text` | Link text color | `#2563eb` |
+| `data-style-link-hover-text` | Link hover text color | `#1d4ed8` |
+
+#### Status colors
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-error-bg` | Error background color | `#fef2f2` |
+| `data-style-error-text` | Error text color | `#dc2626` |
+| `data-style-error-border` | Error border color | `#fecaca` |
+
+#### Typography
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-font-family` | Font family | `'Inter', sans-serif` |
+| `data-style-font-size` | Base font size | `16px` |
+| `data-style-font-size-small` | Small font size | `14px` |
+| `data-style-font-size-large` | Large font size | `18px` |
+
+#### Spacing and layout
+
+| Property | Description | Example |
+| --- | --- | --- |
+| `data-style-border-radius` | Default border radius | `4px` |
+| `data-style-border-radius-small` | Small border radius | `2px` |
+| `data-style-border-radius-large` | Large border radius | `8px` |
+| `data-style-transition-duration` | Animation transition duration | `150ms` |
+
+### Complete branding example
+
+```html
+<script
+  src="https://freespoke.com/widgets/freespoke-search/embed/index.js"
+  data-client-id="your-client-id"
+  data-theme="light"
+  data-embedded-search="true"
+  data-placeholder="Search our knowledge base..."
+
+  data-style-primary-bg="#fafafa"
+  data-style-primary-text="#1a1a1a"
+  data-style-primary-border="#e0e0e0"
+  data-style-secondary-bg="#f5f5f5"
+  data-style-secondary-text="#666666"
+
+  data-style-button-bg="#0066cc"
+  data-style-button-text="#ffffff"
+  data-style-button-hover-bg="#0052a3"
+
+  data-style-input-bg="#ffffff"
+  data-style-input-text="#1a1a1a"
+  data-style-input-placeholder="#999999"
+
+  data-style-font-family="'Source Sans Pro', -apple-system, sans-serif"
+  data-style-font-size="15px"
+  data-style-font-size-large="17px"
+
+  data-style-border-radius="6px"
+  data-style-transition-duration="200ms">
+</script>
+```
+
+## Troubleshooting
+
+### Widget not appearing
+
+- Check the browser console for errors
+- Verify the script loads after the DOM element exists, or use the `defer` attribute
+- Confirm the container element exists in the page
+- Ensure `data-client-id` is provided
+
+### CORS issues
+
+- Ensure your domain is whitelisted by Freespoke
+- Use HTTPS in production
+- Contact support for domain verification
+
+### Auto-search not working
+
+- Verify `data-auto-search="true"` is set
+- Check `data-query-param` matches the URL parameter name
+- Ensure the URL parameter value is properly encoded
+- Confirm `data-embedded-search="true"` is set to display results
+
+## Browser support
+
+The widget supports all modern browsers:
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+Internet Explorer is not supported.
+
+## Support
+
+For help with widget integration or to request a client ID, contact us at [help@freespoke.com](mailto:help@freespoke.com).
